@@ -8,6 +8,10 @@ For this project, I acted as a Cybersecurity Analyst on a security team for an o
 
 - <b>Splunk</b></br></br>
 
+<h2>Environments Used </h2>
+
+- <b>TryHackMe.com</b></br></br>
+
 <h2>Project Walkthrough</h2>
 
 <h3>1. How many total events are indexed by Splunk?</h3>

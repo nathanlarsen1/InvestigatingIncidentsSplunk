@@ -2,113 +2,108 @@
 
 
 <h2>Project description</h2>
-For this project, I acted as a Cybersecurity Analyst on a security team for an organization. One of my job roles involved wiping a USB drive. I chose to use the diskpart command in Windows.<br/><br/>
-
-<b>Warning: This is for educational purposes only.</b> Using this information to wipe drives can permanently erase valuable data. Proceed with extreme caution and at your own risk.<br/><br/>
+For this project, I acted as a Cybersecurity Analyst on a security team for an organization. One of my job roles involved searching Splunk for incident information. This was based on the Improving Incident Response with Accountability Task in the Logging for Accountability Room from the TryHackMe.com website.<br/><br/>
 
 <h2>Language and Applications</h2>
 
-- <b>Command Prompt</b>
-- <b>Diskpart</b></br></br>
-
-<h2>Environments Used </h2>
-
-- <b>Windows 11</b></br></br>
+- <b>Splunk</b></br></br>
 
 <h2>Project Walkthrough</h2>
 
-<h3>1. Search for Command Prompt</h3>
+<h3>1. How many total events are indexed by Splunk?</h3>
 
-I began by typing "Command Prompt" in the Windows search bar.</br></br>
+First, I began by logging into the Splunk Enterprise website for the organization and selecting 'Search & Reporting.'</br></br>
                                                 
 <p align="center">
-<img src="https://i.imgur.com/4tfaGs4.png" height="80%" width="80%" alt="Open the file that contains the allow list"/>
+<img src="https://i.imgur.com/OWUj3JX.png" height="80%" width="80%" alt="Empty Splunk search box"/>
 <br />
 <br />
 </p>
 
-<h3>2. Right-click and Run as Administrator</h3>
-Then I right-clicked on the "Command Prompt" result and selected "Run as administrator."</br></br>
+In the search bar, I typed 'index=*.' This means that I want to retrieve all index records. The '*' is a wildcard character.</br></br>
+
+<p align="center">
+<img src="https://i.imgur.com/eLruspo.png" height="80%" width="80%" alt="Empty Splunk search box"/>
+<br />
+<br />
+</p>
+
+On the right side of the search bar are the search filters. I set the search filter to 'All time.'</br></br>
+
+<p align="center">
+<img src="https://i.imgur.com/NrR9liC.png" height="80%" width="80%" alt="Empty Splunk search box"/>
+<br />
+<br />
+</p>
+
+The next thing I did was click on the magnifying glass button to initiate a search. I noted that 12,256 events were returned by the search.</br></br>
+
+<p align="center">
+<img src="https://i.imgur.com/vDHOxKQ.png" height="80%" width="80%" alt="Empty Splunk search box"/>
+<br />
+<br />
+</p>
+
+<h3>2. How many events were indexed from April 15th to 16th 2022?</h3>
+
+For this question, I modified the search filter and set it to a specific date range.</br></br>
                                                 
 <p align="center">
-<img src="https://i.imgur.com/7bCi1DW.png" height="30%" width="30%" alt="Open the file that contains the allow list"/>
+<img src="https://i.imgur.com/qzXfBTR.png" height="80%" width="80%" alt="Open the file that contains the allow list"/>
 <br />
 <br />
 </p>
 
-<h3>3. Command Prompt</h3>
-The Command Prompt opened.</br></br>
+After clicking the 'Apply' button and the magnifying glass button, the system returned the following results. I noted that 12,250 events were returned by the search.</br></br>
+
+<p align="center">
+<img src="https://i.imgur.com/ESa2Gqh.png" height="80%" width="80%" alt="Open the file that contains the allow list"/>
+<br />
+<br />
+</p>
+
+<h3>3. How many unique users appear in the data set?</h3>
+
+On the left side of the Search, under SELECTED FIELDS, I noted that 4 users were returned by the search.</br></br>
                                                 
 <p align="center">
-<img src="https://i.imgur.com/gxojtvH.png" height="80%" width="80%" alt="Open the file that contains the allow list"/>
+<img src="https://i.imgur.com/IgNnC3g.png" height="40%" width="40%" alt="Open the file that contains the allow list"/>
 <br />
 <br />
 </p>
 
-<h3>4. Diskpart</h3>
+<h3>4. How many events are associated with the user "James"?</h3>
 
-In the command prompt, I typed `diskpart` and pressed Enter.</br></br> 
+Again, on the left side of the Search, under SELECTED FIELDS, I clicked on the 'User' link. This opened up search results based on individual users. I noted that the user account for James was associated with 5 events.</br></br> 
 
 <p align="center">
-<img src="https://i.imgur.com/TGhFnGl.png" height="80%" width="80%" alt="Read the file contents"/>
+<img src="https://i.imgur.com/QHlT8R2.png" height="80%" width="80%" alt="Read the file contents"/>
 <br />
 <br />
 </p>
 
-<h3>5.List Disk</h3>
+<h3>5.What utility was used in the oldest event associated with "James"?</h3>
 
-After Dispart opened, I typed `list disk` and pressed Enter.<br/><br/>
+After selecting James' name and scrolling down to the last event, I used the find function in my browser to discover that the utility was 'WMI Commandline,' which is wmic.exe.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/E8W9BR7.png" height="80%" width="80%" alt="Convert the string into a list"/>
+<img src="https://i.imgur.com/k7qWfH4.png" height="100%" width="100%" alt="Convert the string into a list"/>
 <br />
 <br />
 </p>
 
-<h3>6. List of Disks</h3>
+<h3>6. What event ID followed process creation events associated with "James"?</h3>
 
-A list displayed of all connected disks.<br/><br/>
+The event that occurred after the Process Create events was the newest event in the search results. I noted that the event ID was 3.<br/><br/>
 
 <p align="center">
-<img src="https://i.imgur.com/mxKdhnd.png" height="80%" width="80%" alt="Iterate through the IP addresses list"/>
+<img src="https://i.imgur.com/813I0ou.png" height="60%" width="60%" alt="Iterate through the IP addresses list"/>
 <br />
 <br />
 </p>
-
-<h3>7. Disk Number</h3>
-
-I carefully reviewed the list and identified the disk that I needed to wipe. I typed `select disk 1` and pressed Enter.<br/><br/>
-
-<p align="center">
-<img src="https://i.imgur.com/TbdSwtf.png" height="80%" width="80%" alt="Remove IP addresses that are on the remove list"/>
-<br />
-<br />
-</p>
-
-<h3>8. Clean Command</h3>
-
-Then in the diskpart prompt I entered `clean` and pressed Enter. I made sure that I had the correct disk before proceeding knowing that this process will permanently erase all data on the selected disk. This was done by double-checking the disk number before proceeding, as wiping the wrong disk can have irreversible consequences.<br/><br/>
-
-<p align="center">
-<img src="https://i.imgur.com/caTn1Ec.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
-<br />
-<br />
-</p>
-
-<h3>9. Dispart Succeeded</h3>
-
-Once the process was finished, I saw a message indicating that Diskpart succeeded in cleaning the disk.</br></br>
-
-<p align="center">
-<img src="https://i.imgur.com/SpBLgP4.png" height="80%" width="80%" alt="Update the file with the revised list of IP addresses"/>
-<br />
-<br />
-</p>
-
-After I was finished, I typed `exit` to leave Diskpart and closed the Command Prompt window.</br></br>
 
 <h3>Summary</h3>
 
-In this excerise, I demonstrated the use of diskpart to wipe a drive as a Cybersecurity Analyst. This example displayed how drives can easily be wiped for reuse.
+In this exercise, I demonstrated the use of Splunk to search for incident information as a cybersecurity analyst. This example displayed how effective Splunk can be as a SIEM tool for retrieving the correct information for incident response.
 
 

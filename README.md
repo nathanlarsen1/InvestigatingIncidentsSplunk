@@ -24,7 +24,7 @@ First, I began by logging into the Splunk Enterprise website for the organizatio
 <br />
 </p>
 
-In the search bar, I typed 'index=*.' This means that I want to retrieve all index records. The '*' is a wildcard character.</br></br>
+In the search bar, I typed 'index=\*.' This means that I want to retrieve all index records. The '\*' is a wildcard character.</br></br>
 
 <p align="center">
 <img src="https://i.imgur.com/eLruspo.png" height="80%" width="80%" alt="Empty Splunk search box"/>

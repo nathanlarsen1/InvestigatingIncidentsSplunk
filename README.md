@@ -16,7 +16,7 @@ For this project, I acted as a Cybersecurity Analyst on a security team for an o
 
 <h3>1. How many total events are indexed by Splunk?</h3>
 
-First, I began by logging into the Splunk Enterprise website for the organization and selecting 'Search & Reporting.'</br></br>
+First, I began by logging into the Splunk Enterprise website for the organization and selecting 'Search & Reporting'.</br></br>
                                                 
 <p align="center">
 <img src="https://i.imgur.com/OWUj3JX.png" height="80%" width="80%" alt="Empty Splunk search box"/>
@@ -24,7 +24,7 @@ First, I began by logging into the Splunk Enterprise website for the organizatio
 <br />
 </p>
 
-In the search bar, I typed 'index=\*' This means that I want to retrieve all index records. The '\*' is a wildcard character.</br></br>
+In the search bar, I typed 'index=\*'. This means that I want to retrieve all index records. The '\*' is a wildcard character.</br></br>
 
 <p align="center">
 <img src="https://i.imgur.com/eLruspo.png" height="80%" width="80%" alt="Empty Splunk search box"/>
@@ -32,7 +32,7 @@ In the search bar, I typed 'index=\*' This means that I want to retrieve all ind
 <br />
 </p>
 
-On the right side of the search bar are the search filters. I set the search filter to 'All time.'</br></br>
+On the right side of the search bar are the search filters. I set the search filter to 'All time'.</br></br>
 
 <p align="center">
 <img src="https://i.imgur.com/NrR9liC.png" height="80%" width="80%" alt="Empty Splunk search box"/>
@@ -88,7 +88,7 @@ Again, on the left side of the Search, under SELECTED FIELDS, I clicked on the '
 
 <h3>5.What utility was used in the oldest event associated with "James"?</h3>
 
-After selecting James' name and scrolling down to the last event, I used the find function in my browser to discover that the utility was 'WMI Commandline,' which is wmic.exe.<br/><br/>
+After selecting James' name and scrolling down to the last event, I used the find function in my browser to discover that the utility was 'WMI Commandline', which is wmic.exe.<br/><br/>
 
 <p align="center">
 <img src="https://i.imgur.com/k7qWfH4.png" height="100%" width="100%" alt="Convert the string into a list"/>
